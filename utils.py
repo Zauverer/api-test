@@ -13,7 +13,7 @@ from typing import Any
 from typing import Dict
 
 # Must change in test repository
-BASE_URL = 'https://dogs.magnet.cl'
+BASE_URL = 'https://dom.domain.cl'
 
 
 def request(

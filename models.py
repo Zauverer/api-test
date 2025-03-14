@@ -27,7 +27,7 @@ class DogHouse:
 
     def fetch_paginated_data(self, endpoint: str, token: str) -> List[Dict]:
         data = []
-        url = f"https://dogs.magnet.cl/api/v1{endpoint}"
+        url = f"https://dom.domain.cl/api/v1{endpoint}"
         while url:
             response = get(url, token)
             data.extend(response.get("results", []))
@@ -65,7 +65,7 @@ class DogHouse:
         return name_counts.most_common(1)[0][0]
 
     def send_data(self, data: dict, token: str):
-        post("https://dogs.magnet.cl/api/v1/answer/", data, token)
+        post("https://dom.domain.cl/api/v1/answer/", data, token)
     
     def print_results(self):
         total_breeds = self.get_total_breeds()
@@ -79,7 +79,7 @@ class DogHouse:
         print(f"Most common dog name: {common_dog_name}")
 
 if __name__ == "__main__":
-    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3NDg1LCJ1c2VybmFtZSI6ImNnb21lemxvYWl6YUBnbWFpbC5jb20iLCJleHAiOjE3Mzk0NTk5NjIsImVtYWlsIjoiY2dvbWV6bG9haXphQGdtYWlsLmNvbSJ9.Hqy8NCWFVZBLP8TxDr_YbfSkGuO9s8wkaT1AO9h1rro"
+    token = ""
 
     
     dog_house = DogHouse()
